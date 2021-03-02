@@ -11,6 +11,8 @@ they will hear and see confirmation message that he has reached the location, if
 - Backend - ExpressJS
 - IDE - VS Code
 - Platform - Web Application 
+- Deployment - heroku
+- Environment - Nodejs
 
 ## Team members
 

@@ -1,4 +1,4 @@
-# Full Stack Application
+# Full Stack Application - Quest Hunt
 
 # Team members
 <table>

@@ -16,3 +16,4 @@ they will hear and see confirmation message that he has reached the location, if
        );
      }
    }
+   export default Main;

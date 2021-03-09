@@ -35,4 +35,18 @@ article{
   .random {
     font-size:24px;
   }
-  
+  #colorSelector1{
+    width: 50%; 
+    display: table-cell; 
+    background: rgb(0, 23, 128);
+    color: lightsalmon;
+}
+
+
+#colorSelector2{
+  display: table-cell; 
+  background:rgb(174, 174, 180);
+  font-size: medium;
+  font-style: italic;
+  color: brown;
+}

@@ -14,7 +14,8 @@ class Main extends Component {
                     </div>
        <div className = "myTable" id = "myTable">
        <div className = "myTable-row" id = "myTable-row">
-           <div id="colorSelector1"></div> <!-- Add the logic for locations -->
+           <div id="colorSelector1"></div> 
+           {/* <!-- Add the logic for locations --> */}
            <div id="colorSelector2"></div>
        </div>
    </div>

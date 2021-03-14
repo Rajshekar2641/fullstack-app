@@ -1,0 +1,20 @@
+{
+  "name": "questhunt-api",
+  "version": "1.0.0",
+  "description": "Full stack application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "publishToHeroku": "cd ../ && git subtree push --prefix api heroku-locator-backend main || true"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.12.0"
+  }
+}

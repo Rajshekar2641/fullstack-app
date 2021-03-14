@@ -15,9 +15,13 @@ they will hear and see confirmation message that he has reached the location, if
 - Deployment - heroku
 - Environment - Nodejs
 
+# Host:
+- Heroku
+
 # Team members
 <table>
 <td align="center"><a href="https://github.com/Rajshekar2641"><img src="https://avatars.githubusercontent.com/u/60024301?s=400&u=b6e5f59a48a3b7d697025c824e866fac05e95541&v=4" width="100px;" alt=""/><br /><sub><b>Rajashekar</b></sub></a><br /></td>
   
 <td align="center"><a href="https://github.com/Ravichanderreddy-goli"><img src="https://avatars.githubusercontent.com/u/60166223?s=460&u=c7fb963d9cc353dcb9f355a333aa551aacf9b4f1&v=4" width="100px;" alt=""/><br /><sub><b>Ravichander Reddy</b></sub></a><br /></td>
 </table>
+

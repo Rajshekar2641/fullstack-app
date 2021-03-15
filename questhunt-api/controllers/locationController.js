@@ -33,6 +33,16 @@ exports.create = (req, res) => {
         longitude: req.body.longitude,
         radius: 100,
       });
+    
+    // Update the location
+
+exports.update = (req, res) => {
+    if(!req.body) {
+        return res.status(400).send({
+            message: "Product content can not be empty"
+        });
+    }
+
      location.save(err => {
              if(err) {
                 let status = err.status || err.statusCode || err.code || 500;

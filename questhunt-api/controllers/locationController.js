@@ -121,3 +121,24 @@ exports.findOne = (req, res) => {
         });
     });
 }
+
+exports.delete = (req, res) => {
+    LocationSchema.findByIdAndRemove(req.params.locationId)
+    .then(location => {
+        if(!location) {
+            return res.status(404).send({
+                message: "Location not found with id " + req.params.locationId
+            });
+        }
+        res.send({message: "Location deleted successfully!"});
+    }).catch(err => {
+        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
+            return res.status(404).send({
+                message: "Location not found with id " + req.params.locationId
+            });                
+        }
+        return res.status(500).send({
+            message: "Could not delete Location with id " + req.params.locationId
+        });
+    });
+}

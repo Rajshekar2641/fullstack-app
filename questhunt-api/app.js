@@ -8,7 +8,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb+srv://s538099:<password>@cluster0.ghisa.azure.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then((res) =>{
+mongoose.connect('mongodb+srv://s538099:Raj@2641@cluster0.ghisa.azure.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', 
+{ useNewUrlParser: true, useUnifiedTopology: true }).then((res) =>{
   app.listen(3000, function () {
   return "Connected to Database"
   

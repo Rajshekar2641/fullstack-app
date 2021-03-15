@@ -64,3 +64,27 @@ exports.findAll = (req, res) => {
         });
     });
 }
+
+// Get the loaction by Id
+
+
+exports.findOne = (req, res) => {
+    LocationSchema.findById(req.params.locationId)
+    .then(location => {
+        if(!location) {
+            return res.status(404).send({
+                message: "Location not found with id " + req.params.locationId
+            });            
+        }
+        res.send(location);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "location not found with id " + req.params.locationId
+            });                
+        }
+        return res.status(500).send({
+            message: "Something wrong retrieving location with id " + req.params.locationId
+        });
+    });
+}

@@ -34,6 +34,29 @@ exports.create = (req, res) => {
         radius: 100,
       });
     
+     // Find and update product with the request body
+    LocationSchema.findByIdAndUpdate(req.params.productId, {
+        locationName : req.body.locationName,
+    }, {new: true})
+    .then(location => {
+        if(!location) {
+            return res.status(404).send({
+                message: "LocationId not found with id " + req.params.locationId
+            });
+        }
+        res.send(location);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Product not found with id " + req.params.locationId
+            });                
+        }
+        return res.status(500).send({
+            message: "Something wrong updating note with id " + req.params.locationId
+        });
+    });
+}
+    
     // Update the location
 
 exports.update = (req, res) => {

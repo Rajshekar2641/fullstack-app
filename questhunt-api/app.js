@@ -1,15 +1,18 @@
 var express = require('express');
 var app = express();
-var port = 3000
+var port = 3000;
+const mongoose = require("mongoose")
+app.use(require('./routes/router'))
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+mongoose.connect("mongodb+srv://s538099:<password>@cluster0.ghisa.azure.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then((res) =>{
+  app.listen(3000, function () {
+  return "Connected to Database"
+  
 })
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+}).catch((e) => {
+ console.log(e,"--error")
 })

@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 var port = 3000;
-const mongoose = require("mongoose")
-app.use(require('./routes/router'))
+var mongoose = require("mongoose")
+app.use(require('./routes/location_router'))
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -15,5 +15,5 @@ mongoose.connect('mongodb+srv://s538099:Raj@2641@cluster0.ghisa.azure.mongodb.ne
   
 })
 }).catch((e) => {
- console.log(e,"--error")
+ console.log(e,"error")
 })

@@ -7,6 +7,7 @@ var locationController = require('../controllers/locationController')
 
  router.get('/locations', locationController.findAll)
  router.post('/addlocation/', locationController.create)  
- router.get('/locations/:locationId', locationController.findOne)            
+ router.get('/locations/:locationId', locationController.findOne)  
+router.put('/locations/:locationId', locationController.update)
 
 module.exports =  router ;

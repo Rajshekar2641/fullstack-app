@@ -71,3 +71,35 @@ exports.findOne = (req, res) => {
     });
 }
 
+// Update the location
+
+exports.update = (req, res) => {
+    if(!req.body) {
+        return res.status(400).send({
+            message: "Product content can not be empty"
+        });
+    }
+
+    // Find and update product with the request body
+    LocationSchema.findByIdAndUpdate(req.params.productId, {
+        locationName : req.body.locationName,
+    }, {new: true})
+    .then(location => {
+        if(!location) {
+            return res.status(404).send({
+                message: "LocationId not found with id " + req.params.locationId
+            });
+        }
+        res.send(location);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Product not found with id " + req.params.locationId
+            });                
+        }
+        return res.status(500).send({
+            message: "Something wrong updating note with id " + req.params.locationId
+        });
+    });
+}
+

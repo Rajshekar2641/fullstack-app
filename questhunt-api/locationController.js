@@ -37,7 +37,7 @@ locationRoutes.route('/:id').get(function(req, res) {
 locationRoutes.route('/add').post(function(req, res) {
     let location = new Location(req.body);
     location.save()
-        .then(todo => {
+        .then(location => {
             res.status(200).json({'Location': 'Location  added successfully'});
         })
         .catch(err => {
@@ -55,7 +55,7 @@ locationRoutes.route('/update/:id').post(function(req, res) {
         location.longitude = req.body.longitude;
         location.radius = req.body.radius;
 
-        location.save().then(todo => {
+        location.save().then(location => {
                 res.json('Location updated!');
             })
             .catch(err => {

@@ -45,6 +45,25 @@ locationRoutes.route('/add').post(function(req, res) {
         });
 });
 
+locationRoutes.route('/update/:id').post(function(req, res) {
+    Location.findById(req.params.id, function(err, location) {
+        if (!location)
+            res.status(404).send("Data not found");
+        else
+        location.locationName = req.body.locationName;
+        location.latitude = req.body.latitude;
+        location.longitude = req.body.longitude;
+        location.radius = req.body.radius;
+
+        location.save().then(todo => {
+                res.json('Location updated!');
+            })
+            .catch(err => {
+                res.status(400).send("Update not possible");
+            });
+    });
+});
+
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
 });

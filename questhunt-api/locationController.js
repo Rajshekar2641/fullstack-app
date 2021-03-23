@@ -64,6 +64,16 @@ locationRoutes.route('/update/:id').post(function(req, res) {
     });
 });
 
+locationRoutes.route('/delete/:id').delete(function(req, res) {
+    Location.findByIdAndRemove(req.params.id, function(err, location) {
+        if (!location)
+            res.status(404).send("Location not found");
+
+        else
+        res.json('Location deleted!');
+    });
+});
+
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
 });

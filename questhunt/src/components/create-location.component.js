@@ -62,13 +62,14 @@ export default class CreateLocation extends Component {
 
         axios.post('http://localhost:4000/locations/add', newLocation)
             .then(res => console.log(res.data));
-        
+
         this.setState({
             locationName: '',
             latitude: '',
             longitude: '',
             radius: ''
         })
+        this.props.history.push('/locations');
     }
 
     render() {
@@ -94,7 +95,7 @@ export default class CreateLocation extends Component {
                                 />
                     </div>
                     <div className="form-group">
-                        <label>Latitude: </label>
+                        <label>Longitude: </label>
                         <input 
                                 type="text" 
                                 className="form-control"

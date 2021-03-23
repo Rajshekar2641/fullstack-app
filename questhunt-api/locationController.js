@@ -34,6 +34,16 @@ locationRoutes.route('/:id').get(function(req, res) {
     });
 });
 
+locationRoutes.route('/add').post(function(req, res) {
+    let location = new Location(req.body);
+    location.save()
+        .then(todo => {
+            res.status(200).json({'Location': 'Location  added successfully'});
+        })
+        .catch(err => {
+            res.status(400).send('adding new Location failed');
+        });
+});
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);

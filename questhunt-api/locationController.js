@@ -3,6 +3,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const locationRoutes = express.Router();
+const PORT = 4000;
+
+var Location = require('./models/location');
 app.use(cors());
 app.use(bodyParser.json());
 

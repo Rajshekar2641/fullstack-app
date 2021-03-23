@@ -27,6 +27,13 @@ locationRoutes.route('/').get(function(req, res) {
     });
 });
 
+locationRoutes.route('/:id').get(function(req, res) {
+    let id = req.params.id;
+    Location.findById(id, function(err, location) {
+        res.json(location);
+    });
+});
+
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);

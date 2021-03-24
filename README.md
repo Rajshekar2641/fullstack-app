@@ -32,3 +32,7 @@ they will hear and see confirmation message that he has reached the location, if
 
 https://questhunt-frontend.herokuapp.com/
 
+# References for deploying
+
+https://betterprogramming.pub/how-to-deploy-multiple-apps-under-a-single-github-repository-to-heroku-f6177489d38
+

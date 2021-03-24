@@ -60,7 +60,7 @@ export default class CreateLocation extends Component {
             radius: this.state.radius
         };
 
-        axios.post('http://localhost:4000/locations/add', newLocation)
+        axios.post('https://questhunt-backend.herokuapp.com/locations/add', newLocation)
             .then(res => console.log(res.data));
 
         this.setState({

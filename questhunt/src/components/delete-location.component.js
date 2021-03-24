@@ -22,7 +22,7 @@ export default class DeleteLocation extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/locations/'+this.props.match.params.id)
+        axios.get('https://questhunt-backend.herokuapp.com/locations/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     locationName: response.data.locationName,
@@ -69,7 +69,7 @@ export default class DeleteLocation extends Component {
             radius: this.state.radius
         };
         console.log(obj);
-        axios.delete('http://localhost:4000/locations/delete/'+this.props.match.params.id, obj)
+        axios.delete('https://questhunt-backend.herokuapp.com/locations/delete/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
         
         this.props.history.push('/locations');

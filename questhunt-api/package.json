@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "publishToHeroku": "cd ../ && git subtree push --prefix api heroku-locator-backend main || true"
+    "publishToHeroku": "cd ../ && git subtree push --prefix questhunt-api heroku-questhunt-backend main || true"
   },
   "author": "",
   "license": "ISC",

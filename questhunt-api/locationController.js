@@ -10,7 +10,8 @@ var Location = require('./models/location');
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/locations', { useNewUrlParser: true });
+// mongoose.connect('mongodb://127.0.0.1:27017/locations', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://s538099:Raj@2641@cluster0.ghisa.azure.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',  { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function() {

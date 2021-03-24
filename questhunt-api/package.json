@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "start": "node locationController.js",
     "publishToHeroku": "cd ../ && git subtree push --prefix questhunt-api heroku-questhunt-backend main || true"
   },
   "author": "",

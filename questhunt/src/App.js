@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import CreateLocation from "./components/create-location.component";
@@ -8,15 +9,17 @@ import EditLocation from "./components/edit-location.component";
 import LocationsList from "./components/locations-list.component";
 import MainComponent from "./components/main-color-app.component";
 import DeleteLocation from "./components/delete-location.component";
+import Header from "./Header/Header";
 
 import logo from "./logo.png";
+import Footer from "./Footer/Footer";
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/">
               <img src={logo} width="30" height="30" alt="CodingTheSmartWay.com" />
             </a>
@@ -31,13 +34,16 @@ class App extends Component {
                 </li>
               </ul>
             </div>
-          </nav>
-          <br/>
+          </nav> */}
+          <Header/>
+          <br></br><br></br><br></br><br></br><br></br>
           <Route path ="/" exact component = {MainComponent}/>
           <Route path="/locations" component={LocationsList} />
           <Route path="/edit/:id" component={EditLocation} />
           <Route path="/addlocation" component={CreateLocation} />
           <Route path="/delete/:id" component = {DeleteLocation} />
+          <Footer/>
+          
         </div>
       </Router>
     );

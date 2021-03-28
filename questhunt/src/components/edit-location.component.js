@@ -77,8 +77,11 @@ export default class EditLocation extends Component {
 
     render() {
         return (
-            <div>
-                <h3 align="center">Update Location</h3>
+            <div style={{marginTop: 10}}>
+            <h3>Update Location</h3>
+            <div className="row">
+                <div className="col-md-3 center">
+            <br></br>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
                         <label>Location Name: </label>
@@ -119,9 +122,10 @@ export default class EditLocation extends Component {
                     <br />
 
                     <div className="form-group">
-                        <input type="submit" value="Update Location" className="btn btn-primary" />
+                        <input type="submit" value="Update Location" className="btn btn-success" />
                     </div>
                 </form>
+                </div></div>
             </div>
         )
     }

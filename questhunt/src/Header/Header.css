@@ -1,0 +1,17 @@
+.header {
+    padding: -3px 0;
+    color: #fff;
+    /* font-family: Raleway; */
+    /* background: #15523C; */
+    background:#1976d2;
+}
+
+.heading{
+    left: 25%;
+    text-align: center;
+}
+
+.link-div{
+    text-align: left;
+}
+

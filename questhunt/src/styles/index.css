@@ -5,14 +5,14 @@ article{
 
   
   .myTable{
-    width:105%;
+    width:100%;
     display:table;
     margin-left: auto;
     margin-right: auto;
   }
   
   .myTable-row{
-    height:450px;
+    height:400px;
     display:table-row;
   }
   

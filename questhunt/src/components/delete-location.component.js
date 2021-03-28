@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Button} from 'react-bootstrap';
 
 export default class DeleteLocation extends Component {
 
@@ -77,8 +78,11 @@ export default class DeleteLocation extends Component {
 
     render() {
         return (
-            <div>
-                <h3 align="center">Update Location</h3>
+        <div style={{marginTop: 10}}>
+                <h3>Delete Location</h3>
+                <div className="row">
+                    <div className="col-md-3 center">
+                <br></br>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
                         <label>Location Name: </label>
@@ -117,11 +121,13 @@ export default class DeleteLocation extends Component {
                     </div>
 
                     <br />
-
+                    
                     <div className="form-group">
-                        <input type="submit" value="Delete Location" className="btn btn-primary" />
+                        <input type="submit" value="Delete Location" className="btn btn-danger"/>
                     </div>
                 </form>
+                </div>
+                </div>
             </div>
         )
     }

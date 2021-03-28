@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Button} from 'react-bootstrap';
+import {FaEdit, FaTrash, FaUpload} from "react-icons/fa";
 
 const Location = props => (
     <tr>
@@ -9,10 +11,12 @@ const Location = props => (
         <td>{props.location.longitude}</td>
         <td>{props.location.radius}</td>
         <td>
-            <Link to={"/edit/"+props.location._id}>Edit</Link>
+            <Button href={"/edit/"+props.location._id} variant="success" size="sm"><FaEdit />&nbsp;Update</Button>{' '}
+            {/* <Link to={"/edit/"+props.location._id}>Edit</Link> */}
         </td>
         <td>
-            <Link to={"/delete/"+props.location._id}>Delete</Link>
+            <Button href={"/delete/"+props.location._id} variant="danger" size="sm"><FaTrash />&nbsp;Delete</Button>{' '}
+            {/* <Link to={"/delete/"+props.location._id}>Delete</Link> */}
         </td>
     </tr>
 )
@@ -43,6 +47,8 @@ export default class LocationsList extends Component {
     render() {
         return (
             <div>
+                <Button href="/addlocation" variant="primary" size="lg"><FaUpload />&nbsp; Add Location</Button>{' '}
+                          <br></br><br></br>
                 <h3>Locations List</h3>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>

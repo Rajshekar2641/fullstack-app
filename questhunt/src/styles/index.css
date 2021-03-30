@@ -2,33 +2,17 @@ article{
     text-align: center;
     color:lightcoral;
   }
-  .header{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    text-align: center;
-    color:chocolate;
-    background-color:burlywood ;
-  }
-  footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height:5%;
-    text-align: center;
-    background-color:burlywood ;
-  
-  }
+
   
   .myTable{
     width:100%;
     display:table;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .myTable-row{
-    height:600px;
+    height:400px;
     display:table-row;
   }
   

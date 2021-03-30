@@ -5,16 +5,20 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "publishToHeroku": "cd ../ && git subtree push --prefix api heroku-locator-backend main || true"
+    "start": "node locationController.js",
+    "publishToHeroku": "cd ../ && git subtree push --prefix questhunt-api heroku-questhunt-backend main || true"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.4",
-    "mongoose": "^5.12.0"
+    "mongoose": "^5.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

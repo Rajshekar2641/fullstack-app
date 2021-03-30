@@ -1,126 +1,62 @@
-"use strict";
+const locationRoutes = require('express').Router();
+var Location = require('../models/location');
 
-const express=require('express')
-const app=express.Router()
-var LocationSchema = require('../models/location')
-let bodyParser = require('body-parser');
-
-
-// app.use(bodyParser.urlencoded());
-
-// app.use(bodyParser.json());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-
-// Add a location
-
-exports.create = (req, res) => {
-    console.log("Entered inside post",req);
-    const location = new LocationSchema({
-        locationName:req.body.locationName,
-        latitude: req.body.latitude,
-        longitude: req.body.longitude,
-        radius: 50,
-      });
-      console.log("created location schema");
-     location.save(err => {
-             if(err) {
-                let status = err.status || err.statusCode || err.code || 500;
-        res.status(status).send({ status, error: err });
-             }
-                 res.send({ status: 200, response: "Added location succesfully" });
-      } )
-}
-
-
-// List all the locations
-
-exports.findAll = (req, res) => {
-    LocationSchema.find()
-    .then(locations => {
-        res.send(locations);
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message || "error retrieving locations."
-        });
-    });
-}
-
-// Get loaction by Id
-
-
-exports.findOne = (req, res) => {
-    LocationSchema.findById(req.params.locationId)
-    .then(location => {
-        if(!location) {
-            return res.status(404).send({
-                message: "Location 404  " + req.params.locationId
-            });            
+locationRoutes.route('/').get(function(req, res) {
+    Location.find(function(err, locations) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(locations);
         }
-        res.send(location);
-    }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(404).send({
-                message: "location not found with id " + req.params.locationId
-            });                
-        }
-        return res.status(500).send({
-            message: "Something wrong retrieving location with id " + req.params.locationId
-        });
     });
-}
+});
 
-// Update the location
+locationRoutes.route('/:id').get(function(req, res) {
+    let id = req.params.id;
+    Location.findById(id, function(err, location) {
+        res.json(location);
+    });
+});
 
-exports.update = (req, res) => {
-    if(!req.body) {
-        return res.status(400).send({
-            message: "Product content can not be empty"
+locationRoutes.route('/add').post(function(req, res) {
+    let location = new Location(req.body);
+    location.save()
+        .then(location => {
+            res.status(200).json({'Location': 'Location  added successfully'});
+        })
+        .catch(err => {
+            res.status(400).send('adding new Location failed');
         });
-    }
+});
 
-    // Find and update product with the request body
-    LocationSchema.findByIdAndUpdate(req.params.productId, {
-        locationName : req.body.locationName,
-    }, {new: true})
-    .then(location => {
-        if(!location) {
-            return res.status(404).send({
-                message: "LocationId not found with id " + req.params.locationId
+locationRoutes.route('/update/:id').post(function(req, res) {
+    Location.findById(req.params.id, function(err, location) {
+        if (!location)
+            res.status(404).send("Data not found");
+        else
+        location.locationName = req.body.locationName;
+        location.latitude = req.body.latitude;
+        location.longitude = req.body.longitude;
+        location.radius = req.body.radius;
+
+        location.save().then(location => {
+                res.json('Location updated!');
+            })
+            .catch(err => {
+                res.status(400).send("Update not possible");
             });
-        }
-        res.send(location);
-    }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(404).send({
-                message: "Product not found with id " + req.params.locationId
-            });                
-        }
-        return res.status(500).send({
-            message: "Something wrong updating note with id " + req.params.locationId
-        });
     });
-}
+});
 
-exports.delete = (req, res) => {
-    LocationSchema.findByIdAndRemove(req.params.locationId)
-    .then(location => {
-        if(!location) {
-            return res.status(404).send({
-                message: "Location not found with id " + req.params.locationId
-            });
-        }
-        res.send({message: "Location deleted successfully!"});
-    }).catch(err => {
-        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
-            return res.status(404).send({
-                message: "Location not found with id " + req.params.locationId
-            });                
-        }
-        return res.status(500).send({
-            message: "Could not delete Location with id " + req.params.locationId
-        });
+locationRoutes.route('/delete/:id').delete(function(req, res) {
+    Location.findByIdAndRemove(req.params.id, function(err, location) {
+        if (!location)
+            res.status(404).send("Location not found");
+
+        else
+        res.json('Location deleted!');
     });
-}
+});
 
+
+module.exports = locationRoutes;

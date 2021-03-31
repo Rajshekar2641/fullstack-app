@@ -89,7 +89,6 @@ export default class CreateLocation extends Component {
                                 value={this.state.locationName}
                                 onChange={this.onChangeLocationName}
                                 pattern="[a-zA-Z]+"
-
                                 required
                                 />
                     </div>
@@ -100,7 +99,7 @@ export default class CreateLocation extends Component {
                                 className="form-control"
                                 value={this.state.latitude}
                                 onChange={this.onChangeLocationLatitude}
-                                min="-180" max="180"
+                                min="-90" max="90"
                                 />
                     </div>
                     <div className="form-group">

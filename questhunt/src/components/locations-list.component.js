@@ -29,7 +29,7 @@ export default class LocationsList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/locations/')
+        axios.get('https://questhunt-backend.herokuapp.com/locations/')
             .then(response => {
                 this.setState({ locations: response.data });
                 console.log(response.data);

@@ -1,18 +1,28 @@
+const { NumberDecimal } = require('bson');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Location = new Schema({
     locationName: {
-        type: String
+        type: String,
+        unique: true,
+        allowNull:false,
+        required:true
     },
     latitude: {
-        type: String
+        type: String,
+        allowNull:false,
+        required:true,
     },
     longitude: {
-        type: String
+        type: String,
+        allowNull:false,
+        required:true
     },
     radius: {
-        type: Number
+        type: Number,
+        allowNull:false,
+        required:true
     }
 })
 

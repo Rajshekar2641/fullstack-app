@@ -88,33 +88,39 @@ export default class CreateLocation extends Component {
                                 className="form-control"
                                 value={this.state.locationName}
                                 onChange={this.onChangeLocationName}
+                                pattern="[a-zA-Z]+"
+
+                                required
                                 />
                     </div>
                     <div className="form-group">
                         <label>Latitude: </label>
                         <input 
-                                type="text" 
+                                type="number" 
                                 className="form-control"
                                 value={this.state.latitude}
                                 onChange={this.onChangeLocationLatitude}
+                                min="-180" max="180"
                                 />
                     </div>
                     <div className="form-group">
                         <label>Longitude: </label>
                         <input 
-                                type="text" 
+                                type="number" 
                                 className="form-control"
                                 value={this.state.longitude}
                                 onChange={this.onChangeLocationLongitude}
+                                min="-180" max="180"
                                 />
                     </div>
                     <div className="form-group">
                         <label>Radius: </label>
                         <input 
-                                type="text" 
+                                type="number" 
                                 className="form-control"
                                 value={this.state.radius}
                                 onChange={this.onChangeLocationRadius}
+                                min="1" max="50"
                                 />
                     </div>
 

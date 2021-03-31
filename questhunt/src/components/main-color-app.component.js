@@ -21,7 +21,7 @@ export default class MainComponent extends Component {
     componentDidMount() {
         var temp = [];
         var target;
-        axios.get('http://localhost:4000/locations/')
+        axios.get('https://questhunt-backend.herokuapp.com/locations/')
         .then(response => {
             this.setState({ locations: response.data });
             for(var i = 0; i< response.data.length; i++){

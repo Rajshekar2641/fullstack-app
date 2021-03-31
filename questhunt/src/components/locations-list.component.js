@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button} from 'react-bootstrap';
-import {FaEdit, FaTrash, FaUpload} from "react-icons/fa";
+import {FaEdit, FaTrash, FaUpload, FaHome} from "react-icons/fa";
 
 const Location = props => (
     <tr>
@@ -29,9 +29,10 @@ export default class LocationsList extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://questhunt-backend.herokuapp.com/locations/')
+        axios.get('http://localhost:4000/locations/')
             .then(response => {
                 this.setState({ locations: response.data });
+                console.log(response.data);
             })
             .catch(function (error){
                 console.log(error);
@@ -48,6 +49,8 @@ export default class LocationsList extends Component {
         return (
             <div>
                 <Button href="/addlocation" variant="primary" size="lg"><FaUpload />&nbsp; Add Location</Button>{' '}
+                &nbsp;&nbsp;
+                <Button href="/" variant="primary" size="lg"><FaHome />&nbsp; Home</Button>{' '}
                           <br></br><br></br>
                 <h3>Locations List</h3>
                 <table className="table table-striped" style={{ marginTop: 20 }} >

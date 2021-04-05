@@ -114,7 +114,7 @@ export default class EditLocation extends Component {
                                 />
                     </div>
                     <div className="form-group">
-                        <label>Radius: </label>
+                        <label>Radius(in meters): </label>
                         <input 
                                 type="text" 
                                 className="form-control"

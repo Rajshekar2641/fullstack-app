@@ -20,7 +20,7 @@ const Location = new Schema({
         required:true
     },
     radius: {
-        type: Number,
+        type: String,
         allowNull:false,
         required:true
     }

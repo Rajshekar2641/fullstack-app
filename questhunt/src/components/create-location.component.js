@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {FaUpload} from "react-icons/fa";
+import { Button} from 'react-bootstrap';
+import {FaEdit, FaTrash, FaPlus, FaHome} from "react-icons/fa";
 
 export default class CreateLocation extends Component {
 
@@ -77,6 +78,8 @@ export default class CreateLocation extends Component {
         return (
             
             <div style={{marginTop: 10}}>
+                <Button href="/" variant="primary" size="lg"><FaHome />&nbsp; Home</Button>{' '}
+                <br></br><br></br>
                 <h3>Add a New Location</h3>
                 <div className="row">
                     <div className="col-md-3 center">
@@ -124,7 +127,7 @@ export default class CreateLocation extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value = "Add Location"  className="btn btn-primary"/>
+                     <input type="submit" value = "Add Location"  className="btn btn-primary"/>
                     </div>
                 </form>
                 </div>

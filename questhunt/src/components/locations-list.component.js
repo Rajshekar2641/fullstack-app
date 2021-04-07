@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button} from 'react-bootstrap';
-import {FaEdit, FaTrash, FaUpload, FaHome} from "react-icons/fa";
+import {FaEdit, FaTrash, FaPlus, FaHome} from "react-icons/fa";
 
 const Location = props => (
     <tr>
@@ -48,7 +48,7 @@ export default class LocationsList extends Component {
     render() {
         return (
             <div>
-                <Button href="/addlocation" variant="primary" size="lg"><FaUpload />&nbsp; Add Location</Button>{' '}
+                <Button href="/addlocation" variant="primary" size="lg"><FaPlus />&nbsp; Add Location</Button>{' '}
                 &nbsp;&nbsp;
                 <Button href="/" variant="primary" size="lg"><FaHome />&nbsp; Home</Button>{' '}
                           <br></br><br></br>

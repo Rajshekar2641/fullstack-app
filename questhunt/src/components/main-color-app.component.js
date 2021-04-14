@@ -53,8 +53,8 @@ export default class MainComponent extends Component {
             function onClickColor1() {
                 { response.map((data,key)=>{
 
-                document.getElementById("colorSelector1").innerHTML = data.colorComponent1 + target;
-                let utterance = new SpeechSynthesisUtterance(data.colorComponent1 + target);
+                document.getElementById("colorSelector1").innerHTML = data.colorComponent1;
+                let utterance = new SpeechSynthesisUtterance(data.colorComponent1);
                 speechSynthesis.speak(utterance);
                 })}
             }

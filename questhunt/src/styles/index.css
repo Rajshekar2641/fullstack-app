@@ -22,6 +22,7 @@ article{
   #colorSelector1{
     width: 50%; 
     display: table-cell; 
+    font-size: large;
     background: rgb(0, 23, 128);
     color: lightsalmon;
 }

@@ -40,6 +40,11 @@ export default class LocationsList extends Component {
     }
 
     locationList() {
+        axios.get('https://questhunt-backend.herokuapp.com/locations/')
+        .then(response => {
+            this.setState({ locations: response.data });
+            console.log(response.data);
+        })
         return this.state.locations.map(function(currentLocation, i){
             return <Location location={currentLocation} key={i} />;
         })

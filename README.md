@@ -36,3 +36,7 @@ https://questhunt-frontend.herokuapp.com/
 
 https://betterprogramming.pub/how-to-deploy-multiple-apps-under-a-single-github-repository-to-heroku-f6177489d38
 
+# Presentation
+
+https://docs.google.com/presentation/d/1xCwA_iv65wdrIMbPUhPKOpwCGicvknVdzju_bE1BGjQ/edit?usp=sharing
+

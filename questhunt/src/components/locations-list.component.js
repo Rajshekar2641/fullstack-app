@@ -6,10 +6,10 @@ import {FaEdit, FaTrash, FaPlus, FaHome} from "react-icons/fa";
 
 const Location = props => (
     <tr>
-        <td>{props.location.locationName}</td>
-        <td>{props.location.latitude}</td>
-        <td>{props.location.longitude}</td>
-        <td>{props.location.radius}</td>
+        <td>{props.location.locationName}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>{props.location.latitude}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>{props.location.longitude}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>{props.location.radius}&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td>
             <Button href={"/edit/"+props.location._id} variant="success" size="sm"><FaEdit />&nbsp;Update</Button>{' '}
             {/* <Link to={"/edit/"+props.location._id}>Edit</Link> */}

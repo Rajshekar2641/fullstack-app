@@ -31,7 +31,7 @@ article{
 #colorSelector2{
   display: table-cell; 
   background:rgb(174, 174, 180);
-  font-size: medium;
+  font-size: large;
   font-style: italic;
   color: brown;
 }
